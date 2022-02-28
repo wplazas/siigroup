@@ -1,0 +1,72 @@
+package com.hero.main.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table (name="tb_heroes")
+public class model {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nombre;
+
+    private String poder;
+
+    public model(){}
+
+    public model (String isbn,String identificacionusuario,int tipousuario,String fechamaximadevolucion){
+          this.isbn=isbn;
+          this.identificacionUsuario=identificacionusuario;
+          this.tipoUsuario= tipousuario;
+          this.fechaMaximaDevolucion=fechamaximadevolucion;
+    }
+
+
+    public Long getId(){
+        return id;
+    }
+
+    public String getisbn(){
+        return isbn;
+    }
+
+  
+    public String getIdentificacionUsuario(){
+        return identificacionUsuario;
+    } 
+    
+    public int getTipoUsuario()
+    {
+        return tipoUsuario;
+    }
+    
+
+    public String getfechaMaximaDevolucion(){
+        return fechaMaximaDevolucion;
+    }
+
+    public void setidentificacionusuario(String identificacionusuario){
+        this.identificacionUsuario = identificacionusuario;
+    }
+
+    public void settipousuario(int tipousuario){
+        this.tipoUsuario = tipousuario;
+    }
+
+    public void setfechamaximadevolucion(String fechamaximadevolucion){
+        this.fechaMaximaDevolucion = fechamaximadevolucion;
+    }
+
+    public void setisbn(String isbn){
+        this.isbn = isbn;
+    }
+	
+
+}

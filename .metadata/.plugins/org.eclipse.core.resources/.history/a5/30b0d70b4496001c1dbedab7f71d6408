@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS tb_hero;  
+CREATE TABLE tb_hero (  
+Id LONG AUTO_INCREMENT  PRIMARY KEY,      
+nombre  VARCHAR(40) NOT NULL,
+poderes VARCHAR(40) NOT NULL 
+);
+
+INSERT INTO tb_hero(nombre,poderes) values ('SUPERMAN','Rayos X, Volar, Hombre de Acero,fuerza');
+INSERT INTO tb_hero(nombre,poderes) values ('WONDERWOMAN','lazo de la verdad, fuerza');
+INSERT INTO tb_hero(nombre,poderes) values ('SPIDERMAN','Trepar los muros, super telaraña, fuerza');
+INSERT INTO tb_hero(nombre,poderes) values ('AQUAMAN','Puede respirar bajo el agua, fuerza');

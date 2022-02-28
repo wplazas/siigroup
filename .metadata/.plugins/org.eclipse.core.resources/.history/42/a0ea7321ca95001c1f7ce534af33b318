@@ -1,0 +1,51 @@
+package com.hero.main.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.hero.main.model.heroModel;
+import com.hero.main.repository.heroRepository;
+
+public class heroServiceImpl implements heroService {
+
+    @Autowired
+    private heroRepository herorepo;
+    
+	@Override
+	public heroModel updateHeroe(heroModel heroe) {
+		java.util.Optional<heroModel>heroModelDB = this.herorepo.findById(heroe.getId());
+        if (heroModelDB.isPresent()){
+        	heroModel heroeUpdate = heroModelDB.get();
+        	heroeUpdate.setnombre(heroe.getnombre());
+        	heroeUpdate.setpoderes(heroe.getpoderes());
+        	herorepo.save(heroeUpdate);
+            return heroeUpdate; 
+        }else{
+            //error aqui!;
+            return null;
+        }
+	}
+
+	@Override
+	public List<heroModel> getAllheroe() {
+		
+		return herorepo.findAll();
+	}
+
+	@Override
+	public heroModel getheroeById(Long id) {
+		Optional<heroModel>heroModelDB = this.herorepo.findById(id);
+        return  heroModelDB.get();
+	}
+
+	@Override
+	public String getheroeByName(heroModel heroe) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+}

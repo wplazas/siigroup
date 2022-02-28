@@ -1,0 +1,13 @@
+package com.hero.main;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class heroApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(heroApplication.class, args);
+	}
+
+}
